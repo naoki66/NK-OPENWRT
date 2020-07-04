@@ -1,4 +1,4 @@
-name: x64稳定版
+name: r619ac
 
 on:
   repository_dispatch:
@@ -9,16 +9,16 @@ on:
 #    branches:
 #      - master
 #    paths:
-#      - 'x64稳定版.config'
+#      - 'r619ac-128m.config'
   schedule:
-    - cron: 00 19 * * *
+    - cron: 00 23 * * *
 #  watch:
 #    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: x64稳定版.config
+  CONFIG_FILE: r619ac-128m.config
   DIY_SH: 稳定版.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
@@ -27,7 +27,7 @@ env:
   UPLOAD_WETRANSFER: false
   UPLOAD_COWTRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: x64稳定版
+  FILE_NAME: r619ac
 
 jobs:
   build:
@@ -131,9 +131,9 @@ jobs:
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: ${{ env.DATE }} 🚀 x64稳定版 | 自动编译
+        name: ${{ env.DATE }} 🚀 r619ac-128m| 自动编译
         allowUpdates: true
-        tag: x64稳定版
+        tag: r619ac
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
