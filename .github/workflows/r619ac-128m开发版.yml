@@ -1,4 +1,4 @@
-name: n1开发版
+name: r619ac开发版
 
 on:
   repository_dispatch:
@@ -9,16 +9,16 @@ on:
 #    branches:
 #      - master
 #    paths:
-#      - 'n1开发版.config'
+#      - 'r619ac-128m.config'
   schedule:
-    - cron: 00 18 * * *
+    - cron: 00 22 * * *
 #  watch:
 #    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: n1开发版.config
+  CONFIG_FILE: r619ac-128m.config
   DIY_SH: 开发版.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
@@ -27,7 +27,7 @@ env:
   UPLOAD_WETRANSFER: false
   UPLOAD_COWTRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: n1开发版
+  FILE_NAME: r619ac开发版
 
 jobs:
   build:
@@ -113,9 +113,6 @@ jobs:
       id: organize
       if: steps.build.outputs.status == 'success' && !cancelled()
       run: |
-        cp mknop/out/5.4.43/*.img ./openwrt/bin/targets/bcm27xx/bcm2710/openwrt-on-n1.img
-        tar -zcvf bin.tar.gz openwrt/bin
-        cp bin.tar.gz ./openwrt/bin/targets/bcm27xx/bcm2710/bin.tar.gz
         cd openwrt/bin/targets/*/*
         rm -rf packages
         bzip2 *.img
@@ -140,9 +137,9 @@ jobs:
       uses: ncipollo/release-action@v1
       if: env.UPLOAD_RELEASE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: ${{ env.DATE }} 🚀 n1开发版 | 自动编译
+        name: ${{ env.DATE }} 🚀 r619ac开发版 | 自动编译
         allowUpdates: true
-        tag: n1开发版
+        tag: r619ac开发版
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
