@@ -1,7 +1,5 @@
 # Actions-OpenWrt  
 
-注：本仓库纯属个人根据自己的设备配置使用，直接FORK本仓库是不能自动编译并发布release的，请看下面使用方法。
-
 ## 使用方法
 
 前面的自动编译以及个性化定制等修改，全部来源于P3TER大神的[代码](https://github.com/P3TERX/Actions-OpenWrt)及[教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)。</br>
@@ -15,7 +13,7 @@
  找不到令牌而宣告失败。或者取消微信推送，注释掉yml文件中开始编译和编译结束的代码（共四行代码）即可。</br>
  
 ## 致谢
-   [P3TERX]( https://github.com/bin20088/Bin)
+  [bin20088]( https://github.com/bin20088/Bin)
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)   
 - [id77](https://github.com/id77/OpenWrt-K2P-firmware)
 - [Microsoft](https://www.microsoft.com)
