@@ -1,12 +1,12 @@
 #!/bin/bash
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.30.2/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 #修改版本号
-sed -i 's/OpenWrt/Bin AutoBuild $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/OpenWrt/AutoBuild $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
 
 #添加额外软件包
-git clone https://github.com/lisaac/luci-app-dockerman.git package/openwrt-packages/luci-app-dockerman
-svn co https://github.com/bin20088/openwrt-package/trunk/package/brook package/openwrt-packages/brook
+#git clone https://github.com/lisaac/luci-app-dockerman.git package/openwrt-packages/luci-app-dockerman
+#svn co https://github.com/bin20088/openwrt-package/trunk/package/brook package/openwrt-packages/brook
 svn co https://github.com/bin20088/openwrt-package/trunk/package/chinadns-ng package/openwrt-packages/chinadns-ng
 svn co https://github.com/bin20088/openwrt-package/trunk/package/tcping package/openwrt-packages/tcping
 svn co https://github.com/bin20088/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
