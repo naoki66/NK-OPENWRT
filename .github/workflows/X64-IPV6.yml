@@ -9,9 +9,9 @@ on:
 #    branches:
 #      - master
 #    paths:
-#      - 'x64开发版.config'
+#      - 'X64-IPV6.config'
   schedule:
-    - cron: 30 21 * * *
+    - cron: 30 18 * * *
 #  watch:
 #    types: started
 
