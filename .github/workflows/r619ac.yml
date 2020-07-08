@@ -11,7 +11,7 @@ on:
 #    paths:
 #      - 'r619ac-128m.config'
   schedule:
-    - cron: 00 23 * * *
+    - cron: 00 18 * * *
 #  watch:
 #    types: started
 
